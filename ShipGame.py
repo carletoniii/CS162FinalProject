@@ -136,6 +136,7 @@ class ShipGame:
                         ship_list.append(occupying_coord)
                         occupying_coord = occupying_coord[:2] + (str(int(occupying_coord[2:]) + 1))
                     self._player1_ship_dict[str(len(self._player1_ship_dict) + 1)] = ship_list
+                    return True
                 elif orientation == 'C':
                     temp_coord = occupying_coord
                     for x in range(ship_length):
@@ -148,6 +149,7 @@ class ShipGame:
                         ship_list.append(occupying_coord)
                         occupying_coord = (str(int(occupying_coord[:2]) + 1)) + occupying_coord[2:]
                     self._player1_ship_dict[str(len(self._player1_ship_dict) + 1)] = ship_list
+                    return True
             elif player == 'second':
                 if orientation == 'R':
                     temp_coord = occupying_coord
@@ -161,6 +163,7 @@ class ShipGame:
                         ship_list.append(occupying_coord)
                         occupying_coord = occupying_coord[:2] + (str(int(occupying_coord[2:]) + 1))
                     self._player2_ship_dict[str(len(self._player2_ship_dict) + 1)] = ship_list
+                    return True
                 elif orientation == 'C':
                     temp_coord = occupying_coord
                     for x in range(ship_length):
@@ -173,6 +176,7 @@ class ShipGame:
                         ship_list.append(occupying_coord)
                         occupying_coord = (str(int(occupying_coord[:2]) + 1)) + occupying_coord[2:]
                     self._player2_ship_dict[str(len(self._player2_ship_dict) + 1)] = ship_list
+                    return True
 
     def _ship_status(self, player, ship_num):
         """
